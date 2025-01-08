@@ -1,0 +1,8 @@
+#This is an example webapp.io configuration for NodeJS
+FROM webapp.io/node:16
+# To note: Layerfiles create VMs, *not* containers!
+
+COPY / /root
+RUN npm ci
+RUN BACKGROUND node .output/server/index.mjs
+EXPOSE WEBSITE localhost:80
