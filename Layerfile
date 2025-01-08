@@ -19,4 +19,4 @@ RUN npm run build
 RUN BACKGROUND node .output/server/index.mjs
 
 # Expose the Nuxt server (default port is 3000)
-EXPOSE WEBSITE http://localhost:80
+EXPOSE WEBSITE http://localhost:3000
