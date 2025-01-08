@@ -1,8 +1,22 @@
-#This is an example webapp.io configuration for NodeJS
-FROM webapp.io/node:16
-# To note: Layerfiles create VMs, *not* containers!
+FROM vm/ubuntu:22.04
 
-COPY / /root
-RUN npm ci
+# Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get update && apt-get install -y nodejs
+
+# Verify installations
+RUN node -v
+RUN npm -v
+
+# Install Nuxt project dependencies
+COPY . .
+RUN npm install
+
+# Build the Nuxt application
+RUN npm run build
+
+# Start the Nuxt server in the background
 RUN BACKGROUND node .output/server/index.mjs
-EXPOSE WEBSITE localhost:80
+
+# Expose the Nuxt server (default port is 3000)
+EXPOSE WEBSITE http://localhost:80
