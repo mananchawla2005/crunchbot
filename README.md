@@ -1,75 +1,64 @@
-# Nuxt Minimal Starter
+# RAG Search Documentation App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A documentation search application built with Nuxt 3 that uses RAG (Retrieval Augmented Generation) with Google's Gemini AI for intelligent documentation search and responses.
 
-## Setup
+## Features
 
-Make sure to install dependencies:
+- 🔐 Authentication
+- 🔍 Smart documentation search powered by Gemini AI
+- 💻 Code syntax highlighting
+- 🎨 Tailwind CSS styling with Typography plugin
+- 🚀 Server-side rendering with Nuxt 3
+
+## Prerequisites
+
+- Node.js
+- PostgreSQL database
+- Google Cloud API key for Gemini AI
+
+## Environment Setup
+
+Create a `.env` file based on [.env.example](.env.example):
 
 ```bash
-# npm
+NUXT_DB_URI="your-postgres-connection-string"
+NUXT_GEMINI="your-gemini-api-key"
+```
+
+## Installation
+
+```bash
+# Install dependencies
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+## Development
 
 ```bash
-# npm
+# Start development server
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+
+The application will be available at `http://localhost:3000`
 
 ## Production
 
-Build the application for production:
-
 ```bash
-# npm
+# Build for production
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
+# Start production server
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Technologies Used
+
+- [Nuxt 3](https://nuxt.com)
+- [Lucia Auth](https://lucia-auth.com)
+- [Google Generative AI](https://ai.google.dev/)
+- [TailwindCSS](https://tailwindcss.com)
+- [PostgreSQL](https://postgresql.org)
+
+## License
+
+MIT License
